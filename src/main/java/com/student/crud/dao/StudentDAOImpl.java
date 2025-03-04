@@ -1,5 +1,6 @@
 package com.student.crud.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,13 +11,14 @@ import jakarta.persistence.EntityManager;
 
 
 @Repository
-public class StudentDaoImpl implements StudentDao{
+public class StudentDAOImpl implements StudentDAO{
     
     // define fields
     private EntityManager entityManager;
   
     // inject using constructor injection
-    public StudentDaoImpl(EntityManager entityManager){
+    @Autowired  // not necessary if there is only one constructor 
+    public StudentDAOImpl(EntityManager entityManager){
         this.entityManager = entityManager;
     }
 
@@ -25,5 +27,10 @@ public class StudentDaoImpl implements StudentDao{
     @Transactional
     public void save(Student theStudent){
         entityManager.persist(theStudent);
+    }
+
+    @Override
+    public Student findById(int id){
+        return entityManager.find(Student.class, id);
     }
 }

@@ -5,7 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.student.crud.dao.StudentDaoImpl;
+import com.student.crud.dao.StudentDAO;
+import com.student.crud.dao.StudentDAOImpl;
 import com.student.crud.entity.Student;
 
 @SpringBootApplication
@@ -16,13 +17,15 @@ public class CrudApplication {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(StudentDaoImpl studentDaoImpl){
+	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
 		return runner -> {
-			createStudent(studentDaoImpl);
+			createStudent(studentDAO);
+			System.out.println("-----------------------");
+			findStudent(studentDAO);
 		};
 	}
 
-	public void createStudent(StudentDaoImpl studentDaoImpl){
+	public void createStudent(StudentDAO studentDAO){
 		// create the student
 		System.out.println("Creating 3 Students....");
 		Student theStudent = new Student("omar", "moataz", "omar@gmail.com");
@@ -31,15 +34,21 @@ public class CrudApplication {
 
 		// save it
 		System.out.println("Saving them ....... ");
-		studentDaoImpl.save(theStudent);
-		studentDaoImpl.save(student2);
-		studentDaoImpl.save(student3);
+		studentDAO.save(theStudent);
+		studentDAO.save(student2);
+		studentDAO.save(student3);
 
 		// view its id
 		System.out.println("Successfully created a student with id: " + theStudent.getId());
 		System.out.println("Successfully created a student with id: " + student2.getId());
 		System.out.println("Successfully created a student with id: " + student3.getId());
 
+	}
+
+	public void findStudent(StudentDAO studentDAO){
+		System.out.println("retrieving a student with id 2");
+		Student student = studentDAO.findById( 2);
+		System.out.println(student);
 	}
 
 }
