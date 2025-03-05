@@ -1,4 +1,4 @@
 /home/user1/Desktop/Work Space/my-projects/spring-boot-CRUD/src/main/java/com/student/crud/CrudApplication.java
-/home/user1/Desktop/Work Space/my-projects/spring-boot-CRUD/src/main/java/com/student/crud/dao/StudentDao.java
-/home/user1/Desktop/Work Space/my-projects/spring-boot-CRUD/src/main/java/com/student/crud/dao/StudentDaoImpl.java
+/home/user1/Desktop/Work Space/my-projects/spring-boot-CRUD/src/main/java/com/student/crud/dao/StudentDAO.java
+/home/user1/Desktop/Work Space/my-projects/spring-boot-CRUD/src/main/java/com/student/crud/dao/StudentDAOImpl.java
 /home/user1/Desktop/Work Space/my-projects/spring-boot-CRUD/src/main/java/com/student/crud/entity/Student.java

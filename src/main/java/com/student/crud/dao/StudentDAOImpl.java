@@ -1,5 +1,7 @@
 package com.student.crud.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -7,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.student.crud.entity.Student;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 
 
 
@@ -33,4 +36,10 @@ public class StudentDAOImpl implements StudentDAO{
     public Student findById(int id){
         return entityManager.find(Student.class, id);
     }
+
+    public List<Student> findAll(){
+        TypedQuery<Student> theQuery =  entityManager.createQuery("FROM Student", Student.class);  
+        return theQuery.getResultList();
+    } 
+
 }
