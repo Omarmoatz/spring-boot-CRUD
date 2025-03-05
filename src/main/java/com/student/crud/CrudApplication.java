@@ -26,6 +26,8 @@ public class CrudApplication {
 			findStudent(studentDAO);
 			System.out.println("-----------------------");
 			findAllStudents(studentDAO);
+			System.out.println("-----------------------");
+			findStudentByLastName(studentDAO, "osama");
 		};
 	}
 
@@ -66,5 +68,15 @@ public class CrudApplication {
 		}
 	}
 
+	public void findStudentByLastName(StudentDAO studentDAO ,String lastName){
+		
+		System.out.println("getting a student by last name......");
+		List<Student> query = studentDAO.findByLastName(lastName);
+	
+		for (Student object:query){
+			System.out.println(object);
+		}
+	
+	}
 
 }
