@@ -23,28 +23,28 @@ public class CrudApplication {
 		return runner -> {
 			createStudent(studentDAO);
 
-			System.out.println("-----------------------");
-			findStudent(studentDAO);
+			// System.out.println("-----------------------");
+			// findStudent(studentDAO);
 
-			System.out.println("-----------------------");
-			findAllStudents(studentDAO);
+			// System.out.println("-----------------------");
+			// findAllStudents(studentDAO);
 
-			System.out.println("-----------------------");
-			findStudentByLastName(studentDAO, "osama");
+			// System.out.println("-----------------------");
+			// findStudentByLastName(studentDAO, "osama");
 			
-			System.out.println("-----------------------");
-			updateStudentLastName(studentDAO);
+			// System.out.println("-----------------------");
+			// updateStudentLastName(studentDAO);
 
 
-			System.out.println("-----------------------");
-			deleteStudent(studentDAO);
+			// System.out.println("-----------------------");
+			// deleteStudent(studentDAO);
 
-			System.out.println("-----------------------");
-			deleteAllStudents(studentDAO);
+			// System.out.println("-----------------------");
+			// deleteAllStudents(studentDAO);
 
 
-			System.out.println("-----------------------");
-			findAllStudents(studentDAO);
+			// System.out.println("-----------------------");
+			// findAllStudents(studentDAO);
 
 		};
 	}
