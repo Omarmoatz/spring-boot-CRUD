@@ -39,6 +39,11 @@ public class CrudApplication {
 			System.out.println("-----------------------");
 			deleteStudent(studentDAO);
 
+			System.out.println("-----------------------");
+			deleteAllStudents(studentDAO);
+
+
+			System.out.println("-----------------------");
 			findAllStudents(studentDAO);
 
 		};
@@ -109,6 +114,14 @@ public class CrudApplication {
 		System.out.println("deleting a student with id  " + studentId);
 
 		studentDAO.delete(studentId);
+	}
+
+	public void deleteAllStudents(StudentDAO studentDAO){
+		System.out.println("deleting all the students... ");
+		
+		int numStudentsDeleted = studentDAO.deleteAll();
+		System.out.println("number of Students deleted " + numStudentsDeleted);
+
 	}
 
 }
