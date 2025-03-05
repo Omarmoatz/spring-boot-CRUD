@@ -22,12 +22,18 @@ public class CrudApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
 		return runner -> {
 			createStudent(studentDAO);
+
 			System.out.println("-----------------------");
 			findStudent(studentDAO);
+
 			System.out.println("-----------------------");
 			findAllStudents(studentDAO);
+
 			System.out.println("-----------------------");
 			findStudentByLastName(studentDAO, "osama");
+			
+			System.out.println("-----------------------");
+			updateStudentLastName(studentDAO);
 		};
 	}
 
@@ -77,6 +83,19 @@ public class CrudApplication {
 			System.out.println(object);
 		}
 	
+	}
+
+
+	public void updateStudentLastName(StudentDAO studentDAO){
+
+		Student theStudent = studentDAO.findById(3);
+
+		studentDAO.updateLastName(theStudent, "ali");
+
+		System.out.println(theStudent);
+
+
+
 	}
 
 }
